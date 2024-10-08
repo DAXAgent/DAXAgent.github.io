@@ -28,24 +28,19 @@ h2 {
     padding: 20px;
     text-align: center; /* Центрирование текста */
     background-color: #f9f9f9; /* Цвет фона для товара */
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease; /* Плавный переход для тени */
 }
 
 .product-item img {
-    width: 2%; /* Изображение занимает 100% ширины контейнера */
+    width: 100%; /* Изображение занимает 100% ширины контейнера */
     height: auto; /* Высота автоматически подстраивается по соотношению сторон */
     max-height: 150px; /* Максимальная высота изображения */
     object-fit: cover; /* Обрезка изображения для заполнения контейнера */
+    border-radius: 5px; /* Скругление углов изображений */
 }
 
 .product-item:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.product-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень при наведении */
 }
 
 .product-item h3 {
@@ -56,7 +51,7 @@ h2 {
 .product-item .price {
     font-size: 18px;
     font-weight: bold;
-    color: #4CAF50;
+    color: #4CAF50; /* Цвет текста цены */
 }
 
 .buy-button {
@@ -75,4 +70,3 @@ h2 {
 .buy-button:hover {
     background-color: #45a049; /* Цвет при наведении */
 }
-
