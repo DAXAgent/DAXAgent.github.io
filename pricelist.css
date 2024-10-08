@@ -1,9 +1,10 @@
 /* Основные стили для страницы */
+
 .price-list-container {
     width: 100%;
     padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: auto; /* Центрирование контейнера */
     text-align: center;
 }
 
@@ -15,18 +16,26 @@ h2 {
 /* Стили для сетки товаров */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Автоматическое заполнение колонок */
+    gap: 20px; /* Отступ между элементами */
 }
 
 /* Стили для отдельного товара */
 .product-item {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 2px solid #ccc; /* Рамка вокруг каждого товара */
+    border-radius: 8px; /* Скругление углов рамки */
+    overflow: hidden; /* Обрезание содержимого, если оно выходит за рамки */
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Центрирование текста */
+    background-color: #f9f9f9; /* Цвет фона для товара */
     transition: box-shadow 0.3s ease;
+}
+
+.product-item img {
+    width: 100%; /* Изображение занимает 100% ширины контейнера */
+    height: auto; /* Высота автоматически подстраивается по соотношению сторон */
+    max-height: 150px; /* Максимальная высота изображения */
+    object-fit: cover; /* Обрезка изображения для заполнения контейнера */
 }
 
 .product-item:hover {
@@ -67,30 +76,3 @@ h2 {
     background-color: #45a049; /* Цвет при наведении */
 }
 
-/* pricelist.css */
-
-.price-list-container {
-    max-width: 1200px; /* Максимальная ширина контейнера */
-    margin: 0 auto; /* Центрирование контейнера */
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Автоматическое заполнение колонок */
-    gap: 20px; /* Отступ между элементами */
-}
-
-.product-item {
-    border: 2px solid #ccc; /* Рамка вокруг каждого товара */
-    border-radius: 8px; /* Скругление углов рамки */
-    overflow: hidden; /* Обрезание содержимого, если оно выходит за рамки */
-    text-align: center; /* Центрирование текста */
-    background-color: #f9f9f9; /* Цвет фона для товара */
-}
-
-.product-item img {
-    width: 20%; /* Изображение занимает 20% ширины контейнера */
-    height: auto; /* Высота автоматически подстраивается по соотношению сторон */
-    max-height: 150px; /* Максимальная высота изображения */
-    object-fit: cover; /* Обрезка изображения для заполнения контейнера */
-}
