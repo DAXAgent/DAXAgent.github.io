@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Price List</title>
-    
     <link rel="stylesheet" href="pricelist.css">
+    <title>Price List</title>
 </head>
 <body>
     <div class="price-list-container">
@@ -15,24 +14,54 @@
         </div>
     </div>
 
-    <!-- Firebase initialization script -->
     <script type="module">
-      // Firebase initialization (your existing code)
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-analytics.js";
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 
-      const firebaseConfig = {
-        apiKey: "AIzaSyB7soKP0TqNvmmVTgXuuYmzWFhF2cyKgiQ",
-        authDomain: "daxagent-1719d.firebaseapp.com",
-        projectId: "daxagent-1719d",
-        storageBucket: "daxagent-1719d.appspot.com",
-        messagingSenderId: "285688537232",
-        appId: "1:285688537232:web:273a7857e4f048a773b815",
-        measurementId: "G-QBY07FR8SC"
-      };
+        const firebaseConfig = {
+            apiKey: "AIzaSyB7soKP0TqNvmmVTgXuuYmzWFhF2cyKgiQ",
+            authDomain: "daxagent-1719d.firebaseapp.com",
+            projectId: "daxagent-1719d",
+            storageBucket: "daxagent-1719d.appspot.com",
+            messagingSenderId: "285688537232",
+            appId: "1:285688537232:web:273a7857e4f048a773b815",
+            measurementId: "G-QBY07FR8SC"
+        };
 
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Load products from Firestore
+        async function loadProducts() {
+            const querySnapshot = await getDocs(collection(db, "products"));
+            querySnapshot.forEach((doc) => {
+                const product = doc.data();
+                displayProduct(product);
+            });
+        }
+
+        // Display a single product
+        function displayProduct(product) {
+            const productGrid = document.getElementById('product-list');
+            const productItem = document.createElement('div');
+            productItem.className = 'product-item';
+
+            productItem.innerHTML = `
+                <img src="${product.imageUrl}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p class="price">$${product.price}</p>
+                <button class="buy-button">Add to Cart</button>
+            `;
+
+            productGrid.appendChild(productItem);
+        }
+
+        // Load products when the window loads
+        window.onload = function() {
+            loadProducts();
+        }
     </script>
 
     <script src="pricelist.js"></script>
