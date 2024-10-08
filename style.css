@@ -1,46 +1,68 @@
+/* Основные стили для всего сайта */
 body {
     font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    display: flex;
-  }
-  
-  aside {
-    width: 20%;
-    padding: 20px;
     background-color: #f4f4f4;
-  }
-  
-  aside ul {
-    list-style-type: none;
+    margin: 0;
     padding: 0;
-  }
-  
-  aside li {
-    margin: 10px 0;
-  }
-  
-  main {
-    width: 80%;
-    padding: 20px;
-  }
-  
-  .product-list {
     display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .product {
-    width: 200px;
-    margin: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Контейнер для всех страниц */
+.container, .login-container, .price-list-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  .product img {
+    width: 400px;
+}
+
+h1, h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Стили для кнопок */
+.button, button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover, button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для формы на странице логина */
+input[type="text"], input[type="password"] {
     width: 100%;
-    height: auto;
-  }
-  
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Стили таблицы для страницы прайс-листа */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}

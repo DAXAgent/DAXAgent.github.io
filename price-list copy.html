@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Price List</title>
+</head>
+<body>
+    <?php
+        session_start();
+        if (!isset($_SESSION['loggedin'])) {
+            header('Location: login.html');
+            exit;
+        }
+    ?>
+    <div class="price-list-container">
+        <h2>Price List</h2>
+        <p>Here are the goods (and prices!) 👇</p>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Product 1</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Product 2</td>
+                <td>$200</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
