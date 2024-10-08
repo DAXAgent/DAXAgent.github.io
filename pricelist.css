@@ -66,3 +66,31 @@ h2 {
 .buy-button:hover {
     background-color: #45a049; /* Цвет при наведении */
 }
+
+/* pricelist.css */
+
+.price-list-container {
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Автоматическое заполнение колонок */
+    gap: 20px; /* Отступ между элементами */
+}
+
+.product-item {
+    border: 2px solid #ccc; /* Рамка вокруг каждого товара */
+    border-radius: 8px; /* Скругление углов рамки */
+    overflow: hidden; /* Обрезание содержимого, если оно выходит за рамки */
+    text-align: center; /* Центрирование текста */
+    background-color: #f9f9f9; /* Цвет фона для товара */
+}
+
+.product-item img {
+    width: 100%; /* Изображение занимает 100% ширины контейнера */
+    height: auto; /* Высота автоматически подстраивается по соотношению сторон */
+    max-height: 150px; /* Максимальная высота изображения */
+    object-fit: cover; /* Обрезка изображения для заполнения контейнера */
+}
