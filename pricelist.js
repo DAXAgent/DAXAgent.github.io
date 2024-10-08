@@ -1,3 +1,7 @@
+/**
+ * The JavaScript code imports Firebase SDK, initializes Firebase, retrieves products from Firestore,
+ * and displays them on a webpage.
+ */
 // Импорт необходимых функций из Firebase SDK
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
